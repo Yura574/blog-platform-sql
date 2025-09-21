@@ -1,11 +1,12 @@
-import {closeTest, initializeTestSetup} from "../../test-setup";
+import {clearDatabase, closeTest, initializeTestSetup} from "../../test-setup";
 
 
 describe('POST users', () => {
     beforeAll(async () => {
         await initializeTestSetup();
     },10000000)
-    beforeEach(() => {
+    beforeEach(async () => {
+        await clearDatabase()
 
     })
 

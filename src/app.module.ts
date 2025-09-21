@@ -13,14 +13,8 @@ import {FallbackController} from "./fallback.controller";
         TypeOrmModule.forRoot({
             type: 'postgres',
             url: process.env.DB_URL,
-            // url: 'postgresql://neondb_owner:npg_gj5I9vWqNTEF@ep-crimson-wildflower-adaxzxt3-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require',
-            // port: 5432,
-            // username: 'root',
-            // password: 'root',
-            // database: 'blog-platform',
-            // entities: [],
             autoLoadEntities: true,
-
+            entities: [__dirname + '/**/*.entity{.ts,.js}'],
             synchronize: true
         }),
         TestingModule.register(),
